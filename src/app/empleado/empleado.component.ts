@@ -9,8 +9,25 @@ export class EmpleadoComponent {
 
   nombre = 'Nicolas';
   apellido = 'Gutierrez';
-  empresa = 'Píldoras Informáticas';
-  //edad= 22;
+  empresa = 'Google';
+  edad= 22;
 
- evaluaEdad(edad:number) { edad <18 ? 'Menor de edad':'Mayor de edad'}
+  habilitacionCuadro = false;
+  usuRegistrado = false;
+
+  textoDeRegistro = 'No hay nadie registrado'
+
+  getRegistroUsuario() {
+    this.usuRegistrado=false;
+  }
+
+  setUsuarioRegistrado(event: Event){
+    if ((<HTMLInputElement>event.target).value === 'si'){
+      this.textoDeRegistro = 'Usuario se acaba de registrar'
+    }else{
+      this.textoDeRegistro = 'Usuario no se encuentra registrado'
+    }
+  }
+
+
 }
